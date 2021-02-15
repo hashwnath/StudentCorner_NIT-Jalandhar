@@ -1,0 +1,8 @@
+requests
+smtlib
+bs4
+BeautifulSoup
+schedule
+time
+schedule
+os
