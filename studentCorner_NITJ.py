@@ -18,19 +18,19 @@ stclst = stc1.split('''|
 fir = stclst[0] 
 stclst = [i[2:] for i in stclst[1:]]   # ultimate student corner list.(sclst)
 stclst.insert(0,fir)
-# print(len(stclst))                  #print of stclst
-prev="Additional Information regarding |Registration of PG Students| in the 2nd Semester | "
+# print(len(stclst))                  #print of stclst   #do not disturb the line 22
+prev="Additional Information regarding |Registration of PG Students| in the 2nd Semester | "  
 new=stclst[0]
 #email-automation-starts
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login('rishabcandy@gmail.com', 'umarani19')
+server.login('sender_emailid', 'password')   #replace emailid ad password with custom email and password, make to enable less secure apps
 #---
 if(prev!=new):
     print('You have got a new message on student corner.')
     print(stclst[0])
     #prev = seplst[0]
-    server.sendmail('rishabcandy@gmail.com', 's.hashwanth531@gmail.com',stclst[0])
+    server.sendmail('sender_emailid', 'receiver_emailid',stclst[0])
     #prev = seplst[0]
 else:
     print('No new information.')     
